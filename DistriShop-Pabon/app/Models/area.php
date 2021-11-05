@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class empresa extends Model
+class area extends Model
 {
     use HasFactory;
-    protected $primarykey = null;
-    protected $table = 'empresa';
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmpresasTable extends Migration
+class CreateMejorPreciosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateEmpresasTable extends Migration
      */
     public function up()
     {
-        Schema::create('empresas', function (Blueprint $table) {
-           
-            $table->integer('codigo_empresa');
-            $table->string('nombre');
+        Schema::create('mejor_precios', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->id();
+            $table->string('code_producto')->references('cod_producto')->on('existencias');
+            $table->string('descripcion');
             $table->timestamps();
-            $table->primary('codigo_empresa');
+
+           
         });
     }
 
@@ -29,6 +31,6 @@ class CreateEmpresasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('mejor_precios');
     }
 }
