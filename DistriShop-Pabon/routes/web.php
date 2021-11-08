@@ -41,3 +41,5 @@ Route::get('/edit', function () {
 Route::get('/show', function () {
     return view('cotizacion.show');
 });
+
+Route::post('/uploadCotizacion', [App\Http\Controllers\CotizacionController::class, 'uploadCotizacion'])->name('cotizacion.upload');

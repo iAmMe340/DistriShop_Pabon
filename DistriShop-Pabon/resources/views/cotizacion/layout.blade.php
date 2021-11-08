@@ -5,13 +5,17 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-
+	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
 	<title>.::Distrishop Pabon::.</title>
@@ -47,7 +51,7 @@
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="show">
-              <i class="align-middle" data-feather="clipboard"></i> <span class="align-middle">Mostrar lista de Cotizaciones</span>
+              <i class="align-middle" data-feather="clipboard"></i> <span class="align-middle">cantidad de productos a comprar</span>
             </a>
 					</li>
 
@@ -83,12 +87,17 @@
 							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
 								<div class="position-relative">
 									<i class="align-middle" data-feather="bell"></i>
-									<span class="indicator">4</span>
+									<span class="indicator">0</span>
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
 								<div class="dropdown-menu-header">
-									4 New Notifications
+									<div class="position-relative">
+										<a href="#" class="text-muted font-weight-light">
+											<i class="align-middle" data-feather="bell"></i>
+											<span class="align-middle">Alertas</span>
+										</a>
+									</div>
 								</div>
 								<div class="list-group">
 									<a href="#" class="list-group-item">
@@ -149,12 +158,12 @@
                 <i class="align-middle" data-feather="settings"></i>
               </a>
 
-							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+				<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Admin Pabon</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Perfil</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> </a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart">analisis</i> </a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
@@ -164,20 +173,16 @@
 						</li>
 					</ul>
 				</div>
-			</nav>
-
-			
-
-					
+			</nav>	
 			</main>
 
 
-
+			@yield('content')
 </body>
 
-</html>
 
-@yield('content')
+
+
 
 
 
@@ -221,71 +226,12 @@ var gradient = ctx.createLinearGradient(0, 0, 0, 225);
 gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
 gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
 // Line chart
-new Chart(document.getElementById("chartjs-dashboard-line"), {
-    type: "line",
-    data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-            label: "Sales ($)",
-            fill: true,
-            backgroundColor: gradient,
-            borderColor: window.theme.primary,
-            data: [
-                2115,
-                1562,
-                1584,
-                1892,
-                1587,
-                1923,
-                2566,
-                2448,
-                2805,
-                3438,
-                2917,
-                3327
-            ]
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        legend: {
-            display: false
-        },
-        tooltips: {
-            intersect: false
-        },
-        hover: {
-            intersect: true
-        },
-        plugins: {
-            filler: {
-                propagate: false
-            }
-        },
-        scales: {
-            xAxes: [{
-                reverse: true,
-                gridLines: {
-                    color: "rgba(0,0,0,0.0)"
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    stepSize: 1000
-                },
-                display: true,
-                borderDash: [3, 3],
-                gridLines: {
-                    color: "rgba(0,0,0,0.0)"
-                }
-            }]
-        }
-    }
 });
 });
 </script>
-
-
-
+<script href=''></script>
 
 @yield('footer')
+
+
+</html>

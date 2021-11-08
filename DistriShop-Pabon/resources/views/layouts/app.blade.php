@@ -68,7 +68,11 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+
+                                <div>
+                                    <a class="nav-link" href="{{ route('home') }}">Home</a>
+                                </div>
+                            </li>   
                         @endguest
                     </ul>
                 </div>
