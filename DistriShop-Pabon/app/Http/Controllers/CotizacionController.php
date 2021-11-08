@@ -7,6 +7,14 @@ use App\Models\uploadCotizacion;
 
 class CotizacionController extends Controller
 {
+    public function index(Request $request)
+    {
+        $cotizaciones = uploadCotizacion::all();
+
+        return view('cotizacion.index', compact('cotizaciones'));
+    }
+
+
     public function uploadCotizacion(Request $request)
     {
        

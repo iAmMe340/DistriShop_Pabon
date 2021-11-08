@@ -22,12 +22,11 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-
-
+Route::get('/cotizacion', [App\Http\Controllers\CotizacionController::class, 'index'])->name('cotizacion');
 
 #ruta de cotizaciones de productos cotizacion.index Dashboard
 Route::get('', function () {
+
     return view('cotizacion.index');
 });
 
