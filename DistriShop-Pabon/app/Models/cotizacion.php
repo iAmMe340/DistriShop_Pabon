@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class cotizacion extends Model
 {
     use HasFactory;
+    protected $primarykey = null;
+    protected $table = 'cotizacion';
 }

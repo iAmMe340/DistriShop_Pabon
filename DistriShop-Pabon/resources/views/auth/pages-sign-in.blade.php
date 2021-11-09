@@ -49,7 +49,7 @@
 											<label class="form-label">Password</label>
 											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
 											<small>
-												<a href="index">Forgot password?</a>
+												<a href="index">olvido su contraseña</a>
 											</small>
 										</div>
 										<div>

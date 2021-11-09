@@ -17,7 +17,7 @@ class CotizacionController extends Controller
 
     public function uploadCotizacion(Request $request)
     {
-       
+
         if ( request()->hasFile( 'files' ) ) {
             foreach (request('files') as $file) {
                 $name = $file->getClientOriginalName();
@@ -30,11 +30,13 @@ class CotizacionController extends Controller
         }else{
             return response()->json(['error' => 'No se ha seleccionado ningun archivo'], 400);
         }
-        
+
         return view('cotizacion.index');
         $file = $request->file('file');
         $name = $file->getClientOriginalName();
 
 
     }
+
+
 }

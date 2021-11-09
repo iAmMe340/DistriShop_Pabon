@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/cotizaciones', function () {
+    return view('cotizacion.layout');
+});*/
 
 
 
@@ -25,8 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/cotizacion', [App\Http\Controllers\CotizacionController::class, 'index'])->name('cotizacion');
 
 #ruta de cotizaciones de productos cotizacion.index Dashboard
-Route::get('', function () {
-
+Route::get('/index', function () {
+    return view('cotizacion.index');
     return view('cotizacion.index');
 });
 
